@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -28,10 +27,8 @@ public class MainController {
     }
 
     @GetMapping("/{id}")
-    public PersonEntity getAllUsers(@PathVariable("id") int id) {
-        PersonEntity person = peopleService.getById(id);
-        System.out.println(person.getUsername());
-        return person;
+    public PersonEntity getUserById(@PathVariable("id") int id) {
+        return peopleService.getById(id);
     }
 
 }
